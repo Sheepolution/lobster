@@ -2,7 +2,7 @@
 
 Intuitive OBS scripting with a LÖVE inspired API wrapper.
 
-[Getting started](doc/getting_started.md) | [API](doc/api.md) | [Examples](#examples)
+[Getting started](https://github.com/Sheepolution/lobster/wiki) | [API](https://github.com/Sheepolution/lobster/wiki/API) | [Examples](#examples)
 
 ## About
 Lobster aims to simplify OBS Lua scripting by providing an intuitive API wrapper, inspired by the API of the [LÖVE](https://github.com/love2d/love/) framework. It saves the user from having to deal with the OBS API directly, and allows for a more object-oriented approach.
