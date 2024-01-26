@@ -20,7 +20,7 @@ lobs.obs = obs
 
 local path = (...):gsub("[^/.\\]+$", "")
 
-require(path .. ".print")
+local reset_print = require(path .. ".print")
 
 lobs.scene = require(path .. ".modules.scene")
 lobs.source = require(path .. ".modules.source")
@@ -80,6 +80,7 @@ function script_update(settings)
 end
 
 local ready = false
+local reset_print_time = 0
 
 function script_tick(dt)
     if not ready and lobs.ready then
@@ -99,6 +100,12 @@ function script_tick(dt)
     end
 
     if lobs.update then
+        reset_print_time = reset_print_time + dt
+        if reset_print_time > .1 then
+            reset_print_time = 0
+            reset_print()
+        end
+
         lobs.update(dt)
     end
 end
