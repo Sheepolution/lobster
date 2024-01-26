@@ -313,12 +313,12 @@ function Item:setScale(scale)
     end
 
     local scale_current = obs.vec2()
-    obs.obs_sceneitem_get_scale(item, scale)
+    obs.obs_sceneitem_get_scale(item, scale_current)
 
-    scale.x = scale.x or scale_current.x
-    scale.y = scale.y or scale_current.y
+    scale_current.x = scale.x or scale_current.x
+    scale_current.y = scale.y or scale_current.y
 
-    obs.obs_sceneitem_set_scale(item, scale)
+    obs.obs_sceneitem_set_scale(item, scale_current)
 
     if not self.item_obs then
         obs.obs_source_release(scene_source)
